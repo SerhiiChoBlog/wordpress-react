@@ -2,7 +2,8 @@
 
 /wp/src/*
 !/wp/src/wp-content/
+!/wp/src/wp-content/plugins/wp-react
 
 /wp/src/wp-content/themes
 /wp/src/wp-content/index.php
-/wp/src/wp-content/plugins/index.php
+/wp/src/wp-content/plugins/*

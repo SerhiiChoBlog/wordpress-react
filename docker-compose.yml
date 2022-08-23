@@ -20,10 +20,9 @@ services:
             WORDPRESS_DEBUG: 1
 
     db:
-        image: mysql:8.0
+        image: mariadb:10.7.3-focal
         command: --default-authentication-plugin=mysql_native_password
         container_name: db
-        platform: linux/x86_64
         restart: always
         ports:
           - 2222:3306
