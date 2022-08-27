@@ -20,6 +20,6 @@ define('WPREACT_URL', plugin_dir_url(__FILE__));
 
 try {
     (new Hook())->init();
-} catch (Exception $e) {
-    // save error to logs
+} catch (Throwable $e) {
+    error_log($e->getMessage());
 }

@@ -6,21 +6,16 @@ use Exception;
 
 final class Hook
 {
-    /**
-     * @throws Exception
-     */
     public function init(): void
     {
         foreach (get_class_methods($this) as $method) {
-            if ($method === __FUNCTION__) {
-                continue;
+            if ($method !== __FUNCTION__) {
+                $this->{$method}();
             }
-
-            $this->{$method}();
         }
     }
 
-    private function exploseApi()
+    private function exploseApi(): void
     {
         //
     }
