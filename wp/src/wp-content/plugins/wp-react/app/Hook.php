@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace WpReact;
 
+use JsonException;
+use WpReact\Http\Ajax\AjaxEntry;
+
 final class Hook
 {
     public function init(): void
@@ -34,5 +37,11 @@ final class Hook
 
             return '<div id="wpreact-birds"></div>';
         });
+    }
+
+    private function registerApi(): void
+    {
+        $ajax_entry = new AjaxEntry();
+        $ajax_entry->openEntry();
     }
 }

@@ -38,9 +38,9 @@ final class AjaxEntry
                 check_ajax_referer('wpreact-birds');
 
                 try {
-                    echo $callback();
-                } catch (Throwable) {
-                    echo json_encode(['error' => 'Server error'], JSON_THROW_ON_ERROR);
+                    echo $callback()->handle();
+                } catch (Throwable $e) {
+                    echo json_encode(['error' => $e->getMessage()], JSON_THROW_ON_ERROR);
                 }
 
                 wp_die();
