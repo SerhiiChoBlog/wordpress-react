@@ -16,7 +16,7 @@ const Birds: React.FC = () => {
         const params = {
             method: 'get_birds',
             params: [
-                { name: 'birds_limit', value: '1' },
+                { name: 'birds_limit', value: '2' },
             ],
         }
 
