@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace WpReact\Http\Ajax\Handlers;
 
-use WpReact\Http\Ajax\Requests\GetFishRequest;
+use WpReact\Http\Ajax\Requests\GetBirdsRequest;
 use WpReact\Http\Ajax\Response;
 
-class GetFishHandler implements Handler
+class GetBirdsHandler implements Handler
 {
-    public function __construct(private GetFishRequest $request)
+    public function __construct(private GetBirdsRequest $request)
     {
     }
 
@@ -26,7 +26,7 @@ class GetFishHandler implements Handler
             ],
         ];
 
-        $birds = array_splice($birds, 0, $this->request->getFishLimit());
+        $birds = array_splice($birds, 0, $this->request->getBirdsLimit());
 
         return Response::json($birds);
     }

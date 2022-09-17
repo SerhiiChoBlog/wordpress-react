@@ -6,9 +6,9 @@ namespace WpReact\Http\Ajax;
 
 use JsonException;
 use Throwable;
-use WpReact\Http\Ajax\Handlers\GetFishHandler;
+use WpReact\Http\Ajax\Handlers\GetBirdsHandler;
 use WpReact\Http\Ajax\Handlers\Handler;
-use WpReact\Http\Ajax\Requests\GetFishRequest;
+use WpReact\Http\Ajax\Requests\GetBirdsRequest;
 
 final class AjaxEntry
 {
@@ -22,8 +22,8 @@ final class AjaxEntry
     public function mapActionsToHandlers(): array
     {
         return [
-            'get_fish' => static function (): Handler {
-                return new GetFishHandler(new GetFishRequest());
+            'get_birds' => static function (): Handler {
+                return new GetBirdsHandler(new GetBirdsRequest());
             },
         ];
     }
