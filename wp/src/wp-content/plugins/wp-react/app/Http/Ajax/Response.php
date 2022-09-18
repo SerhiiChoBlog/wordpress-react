@@ -17,4 +17,12 @@ class Response
 
         return json_encode($data, JSON_THROW_ON_ERROR | JSON_UNESCAPED_UNICODE);
     }
+
+    /**
+     * @throws JsonException
+     */
+    public static function jsonError(string $message): string
+    {
+        return self::json(['error' => WP_DEBUG ? $message : 'Server error']);
+    }
 }
