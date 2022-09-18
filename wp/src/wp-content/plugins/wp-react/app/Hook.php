@@ -39,6 +39,9 @@ final class Hook
         });
     }
 
+    /**
+     * @throws JsonException
+     */
     private function registerApi(): void
     {
         $ajax_entry = new AjaxEntry();
