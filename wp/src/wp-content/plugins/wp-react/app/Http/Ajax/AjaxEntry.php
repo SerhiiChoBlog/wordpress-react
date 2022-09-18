@@ -40,7 +40,7 @@ final class AjaxEntry
                 try {
                     echo $callback()->handle();
                 } catch (Throwable $e) {
-                    echo json_encode(['error' => $e->getMessage()], JSON_THROW_ON_ERROR);
+                    echo Response::json(['error' => $e->getMessage()]);
                 }
 
                 wp_die();
