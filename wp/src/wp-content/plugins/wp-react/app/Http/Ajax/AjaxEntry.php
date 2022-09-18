@@ -17,12 +17,12 @@ final class AjaxEntry
      * Each action name points to a handler, which will be executed
      * when the request will be received.
      *
-     * @return array
+     * @return array<string, callable(): Handler>
      */
     public function mapActionsToHandlers(): array
     {
         return [
-            'get_birds' => static function (): Handler {
+            'get_birds' => function (): Handler {
                 return new GetBirdsHandler(new GetBirdsRequest());
             },
         ];
